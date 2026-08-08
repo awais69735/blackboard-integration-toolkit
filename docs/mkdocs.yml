@@ -1,0 +1,42 @@
+site_name: Blackboard Integration Toolkit
+site_description: Enterprise-grade Python library for Blackboard Learn integration
+site_url: https://github.com/awais69735/blackboard-integration-toolkit
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Configuration: configuration.md
+  - CLI Reference: cli.md
+  - Architecture: architecture.md
+  - Provider Guide: providers.md
+  - Mock Server: mock-server.md
+  - Contributing: contributing.md
+  - API Reference: api.md

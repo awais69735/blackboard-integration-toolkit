@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "id": "c1",
+      "name": "Mathematics 101",
+      "courseId": "MATH101",
+      "description": "Introduction to Mathematics",
+      "available": true,
+      "startDate": "2023-09-01T00:00:00Z",
+      "endDate": "2023-12-15T00:00:00Z",
+      "term": {"name": "Fall 2023"},
+      "created": "2023-08-01T00:00:00Z",
+      "modified": "2023-08-15T00:00:00Z"
+    },
+    {
+      "id": "c2",
+      "name": "Computer Science 201",
+      "courseId": "CS201",
+      "description": "Data Structures",
+      "available": true,
+      "startDate": "2023-09-01T00:00:00Z",
+      "endDate": "2023-12-15T00:00:00Z",
+      "term": {"name": "Fall 2023"},
+      "created": "2023-08-02T00:00:00Z",
+      "modified": "2023-08-16T00:00:00Z"
+    }
+  ]
+}

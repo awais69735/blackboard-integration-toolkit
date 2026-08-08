@@ -1,0 +1,11 @@
+{
+  "c1": [
+    {"userId": "s1", "role": "student", "created": "2023-09-01T00:00:00Z", "active": true},
+    {"userId": "s2", "role": "student", "created": "2023-09-02T00:00:00Z", "active": true},
+    {"userId": "s3", "role": "student", "created": "2023-09-03T00:00:00Z", "active": false}
+  ],
+  "c2": [
+    {"userId": "s1", "role": "instructor", "created": "2023-09-01T00:00:00Z", "active": true},
+    {"userId": "s2", "role": "student", "created": "2023-09-02T00:00:00Z", "active": true}
+  ]
+}
