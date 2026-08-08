@@ -38,6 +38,7 @@ nav:
   - CLI Reference: cli.md
   - Architecture: architecture.md
   - Provider Guide: providers.md
+  - Blackboard API Reference: blackboard-api-reference.md
   - Mock Server: mock-server.md
   - Contributing: contributing.md
   - API Reference: api.md
