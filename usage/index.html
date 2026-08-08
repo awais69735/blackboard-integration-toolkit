@@ -1,0 +1,1660 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise-grade Python library for Blackboard Learn integration">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/awais69735/blackboard-integration-toolkit/usage/">
+      
+      
+        <link rel="prev" href="../quickstart/">
+      
+      
+        <link rel="next" href="../configuration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Usage Guide - Blackboard Integration Toolkit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Blackboard Integration Toolkit" class="md-header__button md-logo" aria-label="Blackboard Integration Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blackboard Integration Toolkit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quickstart/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick Start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Usage Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cli/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CLI Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../providers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Provider Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mock-server/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mock Server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Blackboard Integration Toolkit" class="md-nav__button md-logo" aria-label="Blackboard Integration Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Blackboard Integration Toolkit
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Python API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Python API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialise-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialise the Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Students
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Students">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-a-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get a Student
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Students
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create or Update a Student
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a Student
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Courses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-a-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get a Course
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Courses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-or-update-a-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create or Update a Course
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a Course
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrollments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enrollments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrollments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-enrollments-by-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Enrollments by Course
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-enrollments-by-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Enrollments by Student
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-enrollment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete an Enrollment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assignments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-assignments-in-a-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List Assignments in a Course
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-an-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update an Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-synchronisation-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Synchronisation Engines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Synchronisation Engines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sync-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Students
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Courses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-enrollments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Enrollments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-grades-stub-extend-as-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Grades (stub – extend as needed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CLI Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. CLI Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-students_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Students
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-courses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Courses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-enrollments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Enrollments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-mock-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Mock Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mock-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mock Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-advanced-direct-repository-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Advanced: Direct Repository Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-extending-with-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Extending with Events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Provider Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mock-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="usage-guide">Usage Guide</h1>
+<p>This guide covers every feature of the Blackboard Integration Toolkit, from basic CRUD operations to advanced synchronisation.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Python 3.10+</li>
+<li>Blackboard Learn instance (or mock server)</li>
+<li>Configured environment variables (see <a href="../configuration/">Configuration</a>)</li>
+</ul>
+<hr />
+<h2 id="1-python-api">1. Python API</h2>
+<p>The toolkit provides a clean Python interface via the <code>BlackboardClient</code> facade.</p>
+<h3 id="initialise-the-client">Initialise the Client</h3>
+<pre><code class="language-python">from blackboard import BlackboardClient
+
+client = BlackboardClient.from_env()  # reads from .env
+</code></pre>
+<p>Or manually:</p>
+<pre><code class="language-python">from blackboard import BlackboardClient
+from blackboard.interfaces.config.settings import Settings
+
+settings = Settings.from_env()
+client = BlackboardClient(settings)
+</code></pre>
+<hr />
+<h3 id="students">Students</h3>
+<h4 id="get-a-student">Get a Student</h4>
+<pre><code class="language-python">student = client.get_student(&quot;student_id&quot;)
+if student:
+    print(student.full_name)
+</code></pre>
+<h4 id="list-students">List Students</h4>
+<pre><code class="language-python"># All students (paginated internally)
+for student in client.list_students(limit=50):
+    print(student.username)
+
+# With filters (e.g., active only)
+active_students = client.list_students(active=True)
+</code></pre>
+<h4 id="create-or-update-a-student">Create or Update a Student</h4>
+<pre><code class="language-python">from blackboard.domain.entities import Student
+from blackboard.domain.value_objects import StudentId
+
+new_student = Student(
+    id=StudentId(&quot;ext123&quot;),
+    username=&quot;jdoe&quot;,
+    email=&quot;jdoe@example.com&quot;,
+    first_name=&quot;John&quot;,
+    last_name=&quot;Doe&quot;,
+    active=True
+)
+
+created = client.save(new_student)  # Creates if not exists, updates otherwise
+</code></pre>
+<h4 id="delete-a-student">Delete a Student</h4>
+<pre><code class="language-python">client.delete(StudentId(&quot;ext123&quot;))
+</code></pre>
+<hr />
+<h3 id="courses">Courses</h3>
+<h4 id="get-a-course">Get a Course</h4>
+<pre><code class="language-python">course = client.get_course(&quot;course_id&quot;)
+</code></pre>
+<h4 id="list-courses">List Courses</h4>
+<pre><code class="language-python">courses = client.list_courses(limit=100)
+</code></pre>
+<h4 id="create-or-update-a-course">Create or Update a Course</h4>
+<pre><code class="language-python">from blackboard.domain.entities import Course
+from blackboard.domain.value_objects import CourseId
+
+new_course = Course(
+    id=CourseId(&quot;ext_course_1&quot;),
+    name=&quot;Python Programming&quot;,
+    code=&quot;PY101&quot;,
+    description=&quot;Intro to Python&quot;,
+    active=True
+)
+
+created = client.save(new_course)
+</code></pre>
+<h4 id="delete-a-course">Delete a Course</h4>
+<pre><code class="language-python">client.delete(CourseId(&quot;ext_course_1&quot;))
+</code></pre>
+<hr />
+<h3 id="enrollments">Enrollments</h3>
+<h4 id="get-enrollments-by-course">Get Enrollments by Course</h4>
+<pre><code class="language-python">enrollments = client.list_enrollments(course_id, active_only=True)
+</code></pre>
+<h4 id="get-enrollments-by-student">Get Enrollments by Student</h4>
+<pre><code class="language-python">enrollments = client.enrollments.list_by_student(student_id)
+</code></pre>
+<h4 id="create-an-enrollment">Create an Enrollment</h4>
+<pre><code class="language-python">from blackboard.domain.entities import Enrollment
+from blackboard.domain.value_objects import EnrollmentId, StudentId, CourseId
+
+enrollment = Enrollment(
+    id=EnrollmentId(&quot;s1_c1&quot;),
+    student_id=StudentId(&quot;s1&quot;),
+    course_id=CourseId(&quot;c1&quot;),
+    role=&quot;student&quot;,
+    active=True
+)
+
+created = client.save(enrollment)
+</code></pre>
+<h4 id="delete-an-enrollment">Delete an Enrollment</h4>
+<pre><code class="language-python">client.delete(EnrollmentId(&quot;s1_c1&quot;))
+</code></pre>
+<hr />
+<h3 id="assignments">Assignments</h3>
+<h4 id="list-assignments-in-a-course">List Assignments in a Course</h4>
+<pre><code class="language-python">assignments = client.list_assignments(course_id)
+</code></pre>
+<h4 id="create-an-assignment">Create an Assignment</h4>
+<pre><code class="language-python">from blackboard.domain.entities import Assignment
+from blackboard.domain.value_objects import AssignmentId, CourseId
+
+assignment = Assignment(
+    id=None,  # None will trigger a POST (create)
+    course_id=CourseId(&quot;c1&quot;),
+    name=&quot;Homework 1&quot;,
+    points_possible=100,
+    description=&quot;Solve problems 1-5&quot;
+)
+
+created = client.save(assignment)
+</code></pre>
+<h4 id="update-an-assignment">Update an Assignment</h4>
+<pre><code class="language-python"># Get existing, modify, save
+assignment = client.get_assignment(&quot;a1&quot;)  # if you have a get method
+assignment.name = &quot;Updated Homework 1&quot;
+updated = client.save(assignment)
+</code></pre>
+<hr />
+<h2 id="2-synchronisation-engines">2. Synchronisation Engines</h2>
+<p>Sync engines compare external data (from SIS, ERP, etc.) with Blackboard and perform create/update/delete operations in bulk.</p>
+<h3 id="sync-students">Sync Students</h3>
+<pre><code class="language-python">from blackboard.application.services.sync_service import SyncService
+from blackboard.application.dto import SyncOptions
+
+service = SyncService(client.provider)
+
+external_students = [
+    {&quot;id&quot;: &quot;ext1&quot;, &quot;username&quot;: &quot;john&quot;, &quot;email&quot;: &quot;john@example.com&quot;, ...}
+]
+
+result = service.sync_students(
+    external_students,
+    SyncOptions(dry_run=False)
+)
+
+print(f&quot;Created: {result.created}, Updated: {result.updated}&quot;)
+</code></pre>
+<h3 id="sync-courses">Sync Courses</h3>
+<pre><code class="language-python">external_courses = [
+    {&quot;id&quot;: &quot;ext_c1&quot;, &quot;name&quot;: &quot;Math 101&quot;, &quot;code&quot;: &quot;MATH101&quot;, ...}
+]
+
+result = service.sync_courses(
+    external_courses,
+    SyncOptions(dry_run=True)
+)
+</code></pre>
+<h3 id="sync-enrollments">Sync Enrollments</h3>
+<pre><code class="language-python">external_enrollments = [
+    {
+        &quot;student_id&quot;: &quot;ext_s1&quot;,
+        &quot;course_id&quot;: &quot;ext_c1&quot;,
+        &quot;role&quot;: &quot;student&quot;,
+        &quot;active&quot;: True
+    }
+]
+
+result = service.sync_enrollments(external_enrollments)
+</code></pre>
+<h3 id="sync-grades-stub-extend-as-needed">Sync Grades (stub – extend as needed)</h3>
+<pre><code class="language-python">external_grades = [
+    {
+        &quot;student_id&quot;: &quot;ext_s1&quot;,
+        &quot;assignment_id&quot;: &quot;ext_a1&quot;,
+        &quot;score&quot;: 85.0
+    }
+]
+
+result = service.sync_grades(
+    external_grades,
+    assignment_id=&quot;ext_a1&quot;
+)
+</code></pre>
+<hr />
+<h2 id="3-cli-commands">3. CLI Commands</h2>
+<p>All operations are also available via the command line.</p>
+<h3 id="show-configuration">Show Configuration</h3>
+<pre><code class="language-bash">bb-toolkit config show
+</code></pre>
+<h3 id="validate-connection">Validate Connection</h3>
+<pre><code class="language-bash">bb-toolkit config validate
+</code></pre>
+<h3 id="sync-students_1">Sync Students</h3>
+<pre><code class="language-bash">bb-toolkit sync-students --file students.json
+</code></pre>
+<p>With dry-run:</p>
+<pre><code class="language-bash">bb-toolkit sync-students --file students.json --dry-run
+</code></pre>
+<h3 id="sync-courses_1">Sync Courses</h3>
+<pre><code class="language-bash">bb-toolkit sync-courses --file courses.json
+</code></pre>
+<h3 id="sync-enrollments_1">Sync Enrollments</h3>
+<pre><code class="language-bash">bb-toolkit sync-enrollments --file enrollments.json
+</code></pre>
+<h3 id="start-mock-server">Start Mock Server</h3>
+<pre><code class="language-bash">bb-toolkit mock-server --port 5001
+</code></pre>
+<hr />
+<h2 id="4-mock-server">4. Mock Server</h2>
+<p>For development without a real Blackboard instance, use the mock server. It fully supports all endpoints and OAuth2.</p>
+<pre><code class="language-bash">bb-toolkit mock-server --port 5001
+</code></pre>
+<p>Then set environment variables to point to <code>http://localhost:5001</code> and run any command.</p>
+<hr />
+<h2 id="5-error-handling">5. Error Handling</h2>
+<p>All methods raise custom exceptions:</p>
+<ul>
+<li><code>AuthenticationError</code> – invalid credentials or token expired.</li>
+<li><code>ResourceNotFoundError</code> – requested resource does not exist.</li>
+<li><code>RateLimitExceededError</code> – too many requests.</li>
+<li><code>ValidationError</code> – invalid input data.</li>
+<li><code>BlackboardError</code> – generic error.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">from blackboard.exceptions import ResourceNotFoundError
+
+try:
+    student = client.get_student(&quot;non_existent&quot;)
+except ResourceNotFoundError:
+    print(&quot;Student not found&quot;)
+</code></pre>
+<hr />
+<h2 id="6-advanced-direct-repository-access">6. Advanced: Direct Repository Access</h2>
+<p>If you need more low-level control, you can access repositories directly via <code>client.provider</code>:</p>
+<pre><code class="language-python"># List all students using the repository
+students = list(client.provider.students.list_all())
+
+# Get a specific student
+student = client.provider.students.get(StudentId(&quot;s1&quot;))
+</code></pre>
+<hr />
+<h2 id="7-extending-with-events">7. Extending with Events</h2>
+<p>The toolkit includes an event bus for custom hooks.</p>
+<pre><code class="language-python">from blackboard.events.event_bus import EventBus, Event
+
+def on_sync_completed(event):
+    print(f&quot;Sync finished: {event.payload.status}&quot;)
+
+EventBus.register(&quot;sync.students.completed&quot;, on_sync_completed)
+</code></pre>
+<p>Now your handler will be called after every student sync.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Python API</th>
+<th>CLI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get student</td>
+<td><code>client.get_student(id)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>List students</td>
+<td><code>client.list_students()</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Create/update student</td>
+<td><code>client.save(Student)</code></td>
+<td><code>bb-toolkit sync-students</code></td>
+</tr>
+<tr>
+<td>Delete student</td>
+<td><code>client.delete(StudentId)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Get course</td>
+<td><code>client.get_course(id)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>List courses</td>
+<td><code>client.list_courses()</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Create/update course</td>
+<td><code>client.save(Course)</code></td>
+<td><code>bb-toolkit sync-courses</code></td>
+</tr>
+<tr>
+<td>Delete course</td>
+<td><code>client.delete(CourseId)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>List enrollments</td>
+<td><code>client.list_enrollments(course_id)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Create/update enrollment</td>
+<td><code>client.save(Enrollment)</code></td>
+<td><code>bb-toolkit sync-enrollments</code></td>
+</tr>
+<tr>
+<td>Delete enrollment</td>
+<td><code>client.delete(EnrollmentId)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>List assignments</td>
+<td><code>client.list_assignments(course_id)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Create/update assignment</td>
+<td><code>client.save(Assignment)</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td>Sync students</td>
+<td><code>service.sync_students()</code></td>
+<td><code>bb-toolkit sync-students</code></td>
+</tr>
+<tr>
+<td>Sync courses</td>
+<td><code>service.sync_courses()</code></td>
+<td><code>bb-toolkit sync-courses</code></td>
+</tr>
+<tr>
+<td>Sync enrollments</td>
+<td><code>service.sync_enrollments()</code></td>
+<td><code>bb-toolkit sync-enrollments</code></td>
+</tr>
+<tr>
+<td>Validate config</td>
+<td>–</td>
+<td><code>bb-toolkit config validate</code></td>
+</tr>
+<tr>
+<td>Start mock server</td>
+<td>–</td>
+<td><code>bb-toolkit mock-server</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Now you have everything you need to fully integrate Blackboard with your systems!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
