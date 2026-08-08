@@ -1,3 +1,5 @@
+"""Shared fixtures for all tests."""
+
 import pytest
 import httpx
 from flask import Flask
@@ -6,7 +8,8 @@ from blackboard.infrastructure.http.auth import OAuth2Auth
 from blackboard.infrastructure.http.rate_limiter import TokenBucketRateLimiter
 from blackboard.interfaces.config.settings import AuthSettings, HttpSettings, RateLimitSettings
 from blackboard.infrastructure.providers.blackboard import BlackboardProvider
-from tests.integration.mock_blackboard.server import create_app
+# Import the mock server from the package (not from tests/integration)
+from blackboard.testing.mock_server import create_app
 
 
 @pytest.fixture(scope="function")
